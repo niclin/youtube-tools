@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  goal_amount: 1
+  starting_amount: 1
+  end_after: 2021-08-28
+
+two:
+  title: MyString
+  goal_amount: 1
+  starting_amount: 1
+  end_after: 2021-08-28
