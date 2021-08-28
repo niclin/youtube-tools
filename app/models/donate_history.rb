@@ -1,13 +1,17 @@
 class DonateHistory < ApplicationRecord
-  belongs_to :donate_event
+  belongs_to :user
 
   after_create :update_event!
 
   private
 
   def update_event!
-    total_amount = donate_event.history.sum(:money)
+    event = user.donate_events.enable.first
 
-    donate_event.update!(total_amount: total_amount)
+    return if event.blank?
+
+    total_amount = DonateHistory.where(created_at: event.created_at..Time.zone.now).sum(:amount)
+
+    event.update!(total_amount: total_amount)
   end
 end

@@ -9,7 +9,7 @@ class DonateGoalChannel < ApplicationCable::Channel
   end
 
   def donate
-    ActionCable.server.broadcast("donate_goal_channel", money: data["money"], name: data["name"], comment: data["comment"])
+    ActionCable.server.broadcast("donate_goal_channel", amount: data["amount"], name: data["name"], comment: data["comment"])
   end
 
   def speak(data)

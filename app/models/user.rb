@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable, :omniauthable, :omniauth_providers => [:google_oauth2]
 
+  has_many :donate_events
+  has_many :donate_histories
+  has_many :identities
+
   def self.from_omniauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
 

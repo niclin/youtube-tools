@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2021_08_28_171248) do
   enable_extension "plpgsql"
 
   create_table "donate_events", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "status", default: 0, null: false
     t.string "title", null: false
     t.integer "goal_amount", null: false
     t.integer "total_amount", default: 0, null: false
@@ -26,8 +28,15 @@ ActiveRecord::Schema.define(version: 2021_08_28_171248) do
   end
 
   create_table "donate_histories", force: :cascade do |t|
-    t.integer "donate_event_id", null: false
-    t.integer "money", null: false
+    t.integer "user_id"
+    t.string "currency", null: false
+    t.integer "amount_micros", null: false
+    t.string "display_name"
+    t.string "donate_channel_id"
+    t.string "self_channel_id"
+    t.integer "message_type"
+    t.string "uid"
+    t.string "kind"
     t.string "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

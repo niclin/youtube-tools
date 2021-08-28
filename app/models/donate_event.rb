@@ -1,5 +1,10 @@
 class DonateEvent < ApplicationRecord
-  has_many :history, class_name: "DonateHistory"
+  belongs_to :user
+
+  enum status: {
+    enable: 0,
+    disable: 1
+  }
 
   after_commit :broadcast_goal!
 
