@@ -11,6 +11,7 @@ class CreateDonateHistories < ActiveRecord::Migration[6.1]
       t.string :uid
       t.string :kind
       t.string :comment
+      t.datetime :donate_at
 
       t.timestamps
     end

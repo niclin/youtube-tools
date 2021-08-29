@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_08_28_171248) do
     t.string "uid"
     t.string "kind"
     t.string "comment"
+    t.datetime "donate_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
