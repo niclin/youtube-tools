@@ -1,0 +1,4 @@
+fetch_donate_records:
+  cron: "*/1 * * * *"
+  class: "FetchDonateWorker"
+  queue: default

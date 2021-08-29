@@ -10,8 +10,12 @@ class DonateHistory < ApplicationRecord
 
     return if event.blank?
 
-    total_amount = DonateHistory.where(created_at: event.created_at..Time.zone.now).sum(:amount)
+    total_amount = DonateHistory.where(user: user, donate_at: event.created_at..event.end_after.end_of_day).sum(:amount_micros) / 1000000
 
     event.update!(total_amount: total_amount)
+  end
+
+  def amount
+    amount_micros / 1000000
   end
 end
