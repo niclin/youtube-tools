@@ -20,7 +20,14 @@ class DonateEventsController < ApplicationController
   end
 
   def show
-    @donate_event = DonateEvent.find_by_token(params[:id])
+    token = params[:id]
+
+    @donate_event = DonateEvent.find_by_token(token)
+
+    gon.push({
+      donate_event_token: token
+    })
+
     render layout: "donate"
   end
 

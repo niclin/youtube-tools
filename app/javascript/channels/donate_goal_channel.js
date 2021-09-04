@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-const DonateGoalChannel = consumer.subscriptions.create({ channel: "DonateGoalChannel", id: 1 }, {
+const DonateGoalChannel = consumer.subscriptions.create({ channel: "DonateGoalChannel", token: gon.donate_event_token }, {
   connected() {
     console.log("Connected to the chat room!");
   },
@@ -15,6 +15,7 @@ const DonateGoalChannel = consumer.subscriptions.create({ channel: "DonateGoalCh
 
     $("#total_amount").text(data.total_amount)
     $("#progress-bar").width(`${percentage}%`)
+    $(".wheel-pointer").click()
   }
 });
 

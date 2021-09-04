@@ -37,7 +37,8 @@
   }
 </style>
 
-<div>
+
+<div data-behavior="vue-app">
   <div style="padding: 10px 20px;">
     <div class="condensed__container" style="height: 44px; background: rgb(221, 221, 221);">
       <div class="condensed__current__amount" style="color: rgb(0, 0, 0); font: 800 22px / 44px Ubuntu;">
@@ -57,5 +58,10 @@
       <div id="progress-bar" class="donation-bar condensed__bar" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.15)) rgb(51, 102, 153); width: <%= "#{@percentage}%" %>;">
       </div>
     </div>
+  </div>
+
+  <div class="col-md-12" style="padding-top: 170px;
+    padding-left: 200px;">
+    <lottery></lottery>
   </div>
 </div>

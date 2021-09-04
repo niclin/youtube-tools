@@ -12,10 +12,19 @@ import DonateGoalChannel from "../channels/donate_goal_channel";
 import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 require("stylesheets/application.scss")
+import Vue from 'vue/dist/vue.esm'
+import Lottery from "../components/Lottery"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+document.addEventListener('DOMContentLoaded', () => {
+  const app = new Vue({
+    el: '[data-behavior="vue-app"]',
+    components: { Lottery }
+  })
+})
 
 $(document).on('turbolinks:load', function () {
   $("form#set_name").on('submit', function(e){

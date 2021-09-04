@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_090322) do
+ActiveRecord::Schema.define(version: 2021_09_04_105227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,21 @@ ActiveRecord::Schema.define(version: 2021_09_04_090322) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_identities_on_user_id"
+  end
+
+  create_table "lotteries", force: :cascade do |t|
+    t.integer "donate_event_id"
+    t.string "item"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "lottery_results", force: :cascade do |t|
+    t.integer "donate_event_id"
+    t.integer "lottery_id"
+    t.boolean "is_show"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

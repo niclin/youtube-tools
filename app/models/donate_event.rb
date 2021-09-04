@@ -1,5 +1,7 @@
 class DonateEvent < ApplicationRecord
   belongs_to :user
+  has_many :lotteries
+  has_many :lottery_results
 
   enum status: {
     enable: 0,
@@ -17,6 +19,6 @@ class DonateEvent < ApplicationRecord
   end
 
   def broadcast_goal!
-    ActionCable.server.broadcast("donate_goal_channel_#{id}", goal_amount: goal_amount, total_amount: total_amount)
+    ActionCable.server.broadcast("donate_goal_channel_#{token}", goal_amount: goal_amount, total_amount: total_amount)
   end
 end
