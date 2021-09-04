@@ -3,7 +3,8 @@ class CreateLotteryResults < ActiveRecord::Migration[6.1]
     create_table :lottery_results do |t|
       t.integer :donate_event_id
       t.integer :lottery_id
-      t.boolean :is_show
+      t.string :item
+      t.boolean :is_show, default: false
 
       t.timestamps
     end

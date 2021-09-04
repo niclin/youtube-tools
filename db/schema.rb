@@ -74,7 +74,8 @@ ActiveRecord::Schema.define(version: 2021_09_04_111201) do
   create_table "lottery_results", force: :cascade do |t|
     t.integer "donate_event_id"
     t.integer "lottery_id"
-    t.boolean "is_show"
+    t.string "item"
+    t.boolean "is_show", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

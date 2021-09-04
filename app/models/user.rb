@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :donate_histories
   has_many :identities
 
+  has_one :api_access_token
+
+  before_create :generate_keys
+
   def self.from_omniauth(auth, signed_in_resource = nil)
     identity = Identity.find_for_oauth(auth)
 
@@ -36,5 +40,12 @@ class User < ApplicationRecord
     end
 
     user
+  end
+
+  def generate_keys
+    begin
+      self.build_api_access_token
+      self.api_access_token.key = SecureRandom.urlsafe_base64(30).tr('_-', 'xx')
+    end while ApiAccessToken.where(key: api_access_token.key).any?
   end
 end

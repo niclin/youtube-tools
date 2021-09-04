@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :donate_events
 
   root "home#index"
+
+  mount ApiRoot => ApiRoot::PREFIX
 end

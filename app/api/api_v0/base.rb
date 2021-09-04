@@ -6,6 +6,6 @@ module ApiV0
     use ApiV0::Auth::Middleware
     helpers ::ApiV0::Helpers
 
-    mount LotteryHistories
+    mount LotteryResults
   end
 end
