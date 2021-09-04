@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_04_105227) do
+ActiveRecord::Schema.define(version: 2021_09_04_111201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_access_tokens", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "key", null: false
+    t.boolean "enable", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "donate_events", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -85,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_105227) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -3,7 +3,9 @@ require 'sidekiq/cron/web'
 
 Rails.application.routes.draw do
 
-  mount Sidekiq::Web => '/sidekiq'
+  authenticate :user, -> (user) { user.is_admin? } do
+    mount Sidekiq::Web => 'admin/sidekiq'
+  end
 
   devise_for :users, :controllers => { omniauth_callbacks: "users/omniauth_callbacks" }
 

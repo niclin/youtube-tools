@@ -37,6 +37,9 @@ gem "sidekiq-cron"
 gem 'meta-tags'
 gem "simple_form"
 gem 'gon'
+gem "grape"
+gem 'grape-entity'
+gem 'grape_logging'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
