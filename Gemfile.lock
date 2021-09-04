@@ -118,6 +118,8 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    meta-tags (2.14.0)
+      actionpack (>= 3.2.0, < 6.2)
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
@@ -235,6 +237,9 @@ GEM
     sidekiq-cron (1.2.0)
       fugit (~> 1.1)
       sidekiq (>= 4.2.1)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     spring (2.1.1)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -286,6 +291,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  meta-tags
   omniauth
   omniauth-google-oauth2
   pg (~> 1.1)
@@ -299,6 +305,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq
   sidekiq-cron
+  simple_form
   spring
   turbolinks (~> 5)
   tzinfo-data

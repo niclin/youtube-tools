@@ -1,0 +1,2 @@
+module DonateEventsHelper
+end

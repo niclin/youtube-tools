@@ -6,9 +6,15 @@ class DonateEvent < ApplicationRecord
     disable: 1
   }
 
+  before_create :generate_token
+
   after_commit :broadcast_goal!
 
   private
+
+  def generate_token
+    self.token = SecureRandom.hex(6)
+  end
 
   def broadcast_goal!
     ActionCable.server.broadcast("donate_goal_channel_#{id}", goal_amount: goal_amount, total_amount: total_amount)

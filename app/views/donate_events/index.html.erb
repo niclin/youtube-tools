@@ -1,0 +1,28 @@
+<%= link_to("建立", new_donate_event_path, class: "btn btn-primary") %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">標題</th>
+      <th scope="col">初始金額</th>
+      <th scope="col">當前金額</th>
+      <th scope="col">目標金額</th>
+      <th scope="col">創建日期</th>
+      <th scope="col">結束日期</th>
+      <th scope="col">#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @donate_events.each do |donate_event| %>
+    <tr>
+      <td><%= donate_event.title %></td>
+      <td><%= donate_event.starting_amount %></td>
+      <td><%= donate_event.total_amount %></td>
+      <td><%= donate_event.goal_amount %></td>
+      <td><%= donate_event.created_at %></td>
+      <td><%= donate_event.end_after %></td>
+      <td><%= link_to("查看", donate_event_path(donate_event.token)) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

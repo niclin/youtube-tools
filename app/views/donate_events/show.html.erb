@@ -1,0 +1,61 @@
+<style>
+  .condensed__container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 3px #222;
+  }
+  .condensed__current__amount {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 11;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .condensed__title {
+      position: absolute;
+      top: 0px;
+      left: 10px;
+      text-shadow: 0px 0px 1px rgb(34 34 34);
+  }
+  .condensed__amount {
+      position: absolute;
+      top: 0px;
+      right: 10px;
+      text-shadow: 0px 0px 1px rgb(34 34 34);
+  }
+  .condensed__bar {
+      height: 100%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 9;
+      box-shadow: 0px 0px 1px rgb(0 0 0);
+  }
+</style>
+
+<div>
+  <div style="padding: 10px 20px;">
+    <div class="condensed__container" style="height: 44px; background: rgb(221, 221, 221);">
+      <div class="condensed__current__amount" style="color: rgb(0, 0, 0); font: 800 22px / 44px Ubuntu;">
+        <div id="total_amount"> <%= @donate_event.total_amount %></div>
+
+        <div class="condensed__title" style="color: rgb(0, 0, 0); font: 800 22px / 44px Ubuntu;">
+          <%= @donate_event.title %>
+        </div>
+        <div class="condensed__amount" style="color: rgb(0, 0, 0); font: 800 22px / 44px Ubuntu;">
+          <div id="goal_amount"> <%= @donate_event.goal_amount %></div>
+        </div>
+      </div>
+
+      <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; z-index: 10; box-shadow: rgb(0, 0, 0) 0px 0px 2px inset;">
+      </div>
+
+      <div id="progress-bar" class="donation-bar condensed__bar" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.15)) rgb(51, 102, 153); width: <%= "#{@percentage}%" %>;">
+      </div>
+    </div>
+  </div>
+</div>

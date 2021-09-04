@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for(@donate_event) do |f| %>
+    <%= f.input :title, label: "標題" %>
+    <%= f.input :starting_amount, label: "初始金額" %>
+    <%= f.input :goal_amount, label: "目標金額" %>
+    <%= f.input :end_after, label: "結束日期" %>
+    <%= f.submit "送出", class: "btn btn-primary" %>
+  <% end %>
+</div>

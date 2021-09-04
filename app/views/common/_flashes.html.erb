@@ -1,0 +1,8 @@
+<% if flash.any? %>
+  <% user_facing_flashes.each do |key, value| %>
+    <div class="alert alert-dismissible alert-<%= flash_class(key) %> fade show" role="alert">
+      <%= value %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+<% end %>

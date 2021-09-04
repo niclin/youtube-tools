@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <%= link_to("Donate Tools", root_path, class: "navbar-brand") %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0"></ul>
+
+      <div class="d-flex">
+        <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown no-arrow">
+            <li class="nav-item dropdown">
+              <% if user_signed_in? %>
+              <li class="nav-item position-relative">
+                <%= link_to "#", class: "nav-link" do %>
+                  Hi, <%= current_user.email %>
+                <% end %>
+              </li>
+              <li class="nav-item position-relative">
+                <%= link_to donate_events_path, class: "nav-link" do %>
+                  Donates
+                <% end %>
+              </li>
+              <li>
+                <%= link_to(destroy_user_session_path, method: :delete, class: "nav-link") do %>
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  登出
+                <% end %>
+              </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to("註冊", vip_lobby_path, class: "nav-link") %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to("登入", new_user_session_path, class: "nav-link") %>
+                </li>
+              <% end %>
+            </li>
+          </li>
+        </ul>
+      </div>
+  </div>
+</nav>
