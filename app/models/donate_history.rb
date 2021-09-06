@@ -8,7 +8,7 @@ class DonateHistory < ApplicationRecord
   private
 
   def update_event!
-    event = user.donate_events.enable.first
+    event = user.donate_events.enable.last
 
     return if event.blank?
 

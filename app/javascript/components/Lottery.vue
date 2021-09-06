@@ -49,7 +49,7 @@ export default {
       prizeListOrigin: [
         {
           icon: "https://picsum.photos/40?random=1",
-          name: "喝水 50cc"
+          name: "喝一下水"
         },
         {
           icon: "https://picsum.photos/40?random=6",
@@ -65,7 +65,7 @@ export default {
         },
         {
           icon: "https://picsum.photos/40?random=6",
-          name: "魔王笑"
+          name: "LanMoQ"
         },
       ]
     }
