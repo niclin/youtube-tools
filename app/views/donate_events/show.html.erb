@@ -40,7 +40,7 @@
 
 <div data-behavior="vue-app">
   <div style="padding: 10px 20px;">
-    <div class="condensed__container" style="height: 44px; background: rgb(221, 221, 221);">
+    <div class="condensed__container" style="height: 44px;">
       <div class="condensed__current__amount" style="color: rgb(0, 0, 0); font: 800 22px / 44px Ubuntu;">
         <div id="total_amount"> <%= @donate_event.total_amount %></div>
 
@@ -55,7 +55,7 @@
       <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; z-index: 10; box-shadow: rgb(0, 0, 0) 0px 0px 2px inset;">
       </div>
 
-      <div id="progress-bar" class="donation-bar condensed__bar" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.15)) rgb(51, 102, 153); width: <%= "#{@percentage}%" %>;">
+      <div id="progress-bar" class="donation-bar condensed__bar" style="background: linear-gradient(transparent, rgba(0, 0, 0, 0.15)) rgb(245, 228, 98); width: <%= "#{@percentage}%" %>;">
       </div>
     </div>
   </div>

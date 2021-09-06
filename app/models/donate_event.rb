@@ -1,7 +1,6 @@
 class DonateEvent < ApplicationRecord
   belongs_to :user
   has_many :lotteries
-  has_many :lottery_results
 
   enum status: {
     enable: 0,

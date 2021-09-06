@@ -34,7 +34,11 @@
 </div>
 </template>
 
+
+
 <script>
+// 1. 先去抓 lottery 資料回來
+// 2. 被 trigger 後調閱 results
 export default {
   data() {
     return {
@@ -53,11 +57,11 @@ export default {
         },
         {
           icon: "https://picsum.photos/40?random=2",
-          name: "開合跳 2下"
+          name: "外賣"
         },
         {
           icon: "https://picsum.photos/40?random=3",
-          name: "倒立 2秒"
+          name: "證嚴法師"
         },
         {
           icon: "https://picsum.photos/40?random=6",

@@ -24,6 +24,8 @@ class DonateEventsController < ApplicationController
 
     @donate_event = DonateEvent.find_by_token(token)
 
+    @percentage = (@donate_event.total_amount.to_f / @donate_event.goal_amount.to_f) * 100
+
     gon.push({
       donate_event_token: token
     })
