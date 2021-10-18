@@ -19,6 +19,20 @@ class DonateEventsController < ApplicationController
     end
   end
 
+  def edit
+    @donate_event = current_user.donate_events.find_by_token(params[:id])
+  end
+
+  def update
+    @donate_event = current_user.donate_events.find_by_id(params[:id])
+
+    if @donate_event.update(donate_params)
+      redirect_to donate_events_path
+    else
+      render :edit
+    end
+  end
+
   def show
     token = params[:id]
 

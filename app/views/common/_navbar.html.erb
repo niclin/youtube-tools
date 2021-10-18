@@ -15,7 +15,7 @@
               <% if user_signed_in? %>
               <li class="nav-item position-relative">
                 <%= link_to "#", class: "nav-link" do %>
-                  Hi, <%= current_user.email %>
+                  Hi, <%= current_user.name %>
                 <% end %>
               </li>
               <li class="nav-item position-relative">

@@ -15,13 +15,13 @@
   <tbody>
     <% @donate_events.each do |donate_event| %>
     <tr>
-      <td><%= donate_event.title %></td>
+      <td><%= link_to(donate_event.title, donate_event_path(donate_event.token), target: "_blank") %></td>
       <td><%= donate_event.starting_amount %></td>
       <td><%= donate_event.total_amount %></td>
       <td><%= donate_event.goal_amount %></td>
       <td><%= donate_event.created_at %></td>
       <td><%= donate_event.end_after %></td>
-      <td><%= link_to("查看", donate_event_path(donate_event.token)) %></td>
+      <td><%= link_to("編輯", edit_donate_event_path(donate_event.token)) %></td>
     </tr>
     <% end %>
   </tbody>
